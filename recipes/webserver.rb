@@ -8,11 +8,28 @@
 #
 
 include_recipe "apache2"
+include_recipe "apache2::mod_php5"
+include_recipe "apache2::mod_rewrite"
 
 # disable default site
   apache_site "000-default" do
     enable false
   end
+
+package "php-mysql" do
+  action :install
+  notifies :restart, "service[apache2]"
+end
+
+package "php-mbstring" do
+  action :install
+  notifies :restart, "service[apache2]"
+end
+
+package "php-dom" do
+  action :install
+  notifies :restart, "service[apache2]"
+end
 
 
 node[:users].each do |user|
@@ -47,8 +64,8 @@ node[:users].each do |user|
   end
 
   # create website foler
-  template "/var/www/#{user['sitecode']}dv/index.html" do
-    source "index.html.erb"
+  template "/var/www/#{user['sitecode']}dv/index.php" do
+    source "index.php.erb"
     mode "0644" # forget me to create debugging exercise
   end
 

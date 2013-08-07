@@ -9,3 +9,4 @@
 
 include_recipe "candide::webserver"
 include_recipe "candide::database"
+include_recipe "candide::nfs-support"
