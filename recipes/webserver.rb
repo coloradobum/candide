@@ -65,12 +65,17 @@ node[:users].each do |user|
   directory "/var/www/#{user['sitecode']}dv" do
     action :create
     recursive true
+    mode "0775"
+    owner "#{user['sitecode']}dv"
+    group "#{user['sitecode']}dv"
   end
 
   # create website folder
   template "/var/www/#{user['sitecode']}dv/index.php" do
     source "index.php.erb"
     mode "0644" # forget me to create debugging exercise
+    owner "#{user['sitecode']}dv"
+    group "#{user['sitecode']}dv"
   end
 
   # enable website
