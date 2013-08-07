@@ -32,8 +32,7 @@ package "php-dom" do
 end
 
 package "php-soap" do
-  # action :install
-  # options "--force-yes"
+  action :install
 end
 
 
