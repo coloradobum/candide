@@ -31,6 +31,11 @@ package "php-dom" do
   notifies :restart, "service[apache2]"
 end
 
+package "php-soap" do
+  # action :install
+  # options "--force-yes"
+end
+
 
 node[:users].each do |user|
 
@@ -63,7 +68,7 @@ node[:users].each do |user|
     recursive true
   end
 
-  # create website foler
+  # create website folder
   template "/var/www/#{user['sitecode']}dv/index.php" do
     source "index.php.erb"
     mode "0644" # forget me to create debugging exercise
