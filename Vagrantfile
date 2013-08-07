@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
   # doesn't already exist on the user's system.
   config.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box"
 
+  config.omnibus.chef_version = :latest
+
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
   # any other machines on the same network, but cannot be accessed (through this
@@ -41,13 +43,13 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  # config.vm.provider :virtualbox do |vb|
+  config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
   #   vb.gui = true
   #
   #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
@@ -74,9 +76,16 @@ Vagrant.configure("2") do |config|
     chef.json = {
       :mysql => {
         :server_root_password => 'rootpass',
-        :server_debian_password => 'debpass',
-        :server_repl_password => 'replpass'
-      }
+        :server_debian_password => 'password',
+        :server_repl_password => 'password'
+      },
+      :users => [
+        {:sitecode => 'abc', :comment => 'comment abc'},
+        {:sitecode => 'def', :comment => 'comment def'},
+        {:sitecode => 'ghi', :comment => 'comment ghi'},
+        {:sitecode => 'jkl', :comment => 'comment jkl'},
+        {:sitecode => 'mno', :comment => 'comment mno'},
+      ],
     }
 
     chef.run_list = [
