@@ -22,10 +22,10 @@ pkgs.each do |pkg|
   end
 end
 
-# disable default site
-  apache_site "000-default" do
-    enable false
-  end
+# # disable default site
+#   apache_site "000-default" do
+#     enable false
+#   end
 
 node[:users].each do |user|
 
