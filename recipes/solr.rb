@@ -6,6 +6,8 @@ pkgs.each do |pkg|
   end
 end
 
+include_recipe "java"
+
 remote_file "/usr/local/src/apache-solr-3.6.2.tgz" do
   #source "http://apache.mirrors.hoobly.com/lucene/solr/3.6.2/apache-solr-3.6.2.tgz"
   source "https://dl.dropboxusercontent.com/u/250764/apache-solr-3.6.2.tgz"
@@ -36,7 +38,7 @@ end
 template "/usr/local/bin/apache-solr/drupal/solr/solr.xml" do
   source "solr.xml.erb"
   variables({
-      :sitecode => "test"
+      :sitecode => "abc" #TODO make this autofill
     })
 end
 

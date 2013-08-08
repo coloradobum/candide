@@ -17,8 +17,8 @@ node[:users].each do |user|
   execute "drush" do
       command "cd /var/www/#{user['sitecode']}dv/public_html/; \
       drush si --db-url=mysql://#{user['sitecode']}dv_drupal:#{user['sitecode']}dv_drupal@localhost/#{user['sitecode']}dv_drupal \
-      --account-name=#{user['sitecode']}dv_drupal \
-      --account-pass=#{user['sitecode']}dv_drupal \
+      --account-name=#{user['sitecode']}dv \
+      --account-pass=#{user['sitecode']}dv \
       --db-su=root \
       --db-su-pw=rootpass \
       --site-name='#{user['sitecode']}dv' \
