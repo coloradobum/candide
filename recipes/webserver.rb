@@ -13,30 +13,19 @@ include_recipe "apache2::mod_rewrite"
 include_recipe "php::module_mysql"
 include_recipe "php::module_gd"
 
+pkgs = ["php-mysql", "php-mbstring", "php-dom", "php-soap"]
+
+pkgs.each do |pkg|
+  package pkg do
+    action :install
+    notifies :restart, "service[apache2]"
+  end
+end
+
 # disable default site
   apache_site "000-default" do
     enable false
   end
-
-package "php-mysql" do
-  action :install
-  notifies :restart, "service[apache2]"
-end
-
-package "php-mbstring" do
-  action :install
-  notifies :restart, "service[apache2]"
-end
-
-package "php-dom" do
-  action :install
-  notifies :restart, "service[apache2]"
-end
-
-package "php-soap" do
-  action :install
-end
-
 
 node[:users].each do |user|
 
