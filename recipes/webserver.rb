@@ -10,6 +10,8 @@
 include_recipe "apache2"
 include_recipe "apache2::mod_php5"
 include_recipe "apache2::mod_rewrite"
+include_recipe "php::module_mysql"
+include_recipe "php::module_gd"
 
 # disable default site
   apache_site "000-default" do
@@ -62,21 +64,21 @@ node[:users].each do |user|
   end
 
   # create document root
-  directory "/var/www/#{user['sitecode']}dv" do
+  directory "/var/www/#{user['sitecode']}dv/public_html" do
     action :create
     recursive true
     mode "0775"
     owner "#{user['sitecode']}dv"
-    group "#{user['sitecode']}dv"
+    group "apache"
   end
 
-  # create website folder
-  template "/var/www/#{user['sitecode']}dv/index.php" do
-    source "index.php.erb"
-    mode "0644" # forget me to create debugging exercise
-    owner "#{user['sitecode']}dv"
-    group "#{user['sitecode']}dv"
-  end
+  # # create website folder
+  # template "/var/www/#{user['sitecode']}dv/public_html/index.php" do
+  #   source "index.php.erb"
+  #   mode "0664" # forget me to create debugging exercise
+  #   owner "#{user['sitecode']}dv"
+  #   group "apache"
+  # end
 
   # enable website
   apache_site "#{user['sitecode']}dv.conf" do

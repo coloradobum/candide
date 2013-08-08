@@ -14,4 +14,5 @@ bin/*
 .bundle/*
 .DS_Store
 */.DS_Store
+www
 
