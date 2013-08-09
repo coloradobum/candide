@@ -14,7 +14,6 @@ include_recipe "php::module_mysql"
 include_recipe "php::module_gd"
 
 pkgs = ["php-mysql", "php-mbstring", "php-dom", "php-soap"]
-
 pkgs.each do |pkg|
   package pkg do
     action :install
