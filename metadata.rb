@@ -11,4 +11,5 @@ depends "mysql", "~> 3.0.0"
 depends "database", "~> 1.3.0"
 depends "java", "~> 1.12.0"
 depends "php", "~> 1.2.2"
+depends "memcached", "~> 1.4.0"
 
