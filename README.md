@@ -44,7 +44,7 @@ Clone the Candide project to your local machine:
 <code>git clone git@github.com:coloradobum/candide.git candide</code>
 
 
-Start up the virtual machine
+Start up the virtual machine:
 
 <code>cd candide</code>
 
@@ -99,12 +99,19 @@ Check out the wiki for task specific details:
 https://github.com/coloradobum/candide/wiki
 
 Topics Covered:
+
 How do I create a new account?
+
 How do I view the code and make changes?
+
 How do I connect to the mysql database?
+
 How do I use solr?
+
 Can I use something other than virtualbox?
+
 What's the guiding philosophy for Candide?
+
 Roadmap for Candide.
 
 
