@@ -21,10 +21,13 @@ http://downloads.vagrantup.com
 Reboot your machine to ensure the kernel drivers load properly.
 
 From the command line, ensure vagrant is installed:
+
 <code>vagrant -v</code>
 
 Next install the following vagrant plugins using these commands:
+
 <code>vagrant plugin install vagrant-omnibus</code>
+
 <code>vagrant plugin install vagrant-berkshelf</code>
 
 Add the following entry to your hosts file:
