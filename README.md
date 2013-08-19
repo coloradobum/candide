@@ -10,10 +10,13 @@ Candide lets you focus on developing multiple websites concurrently, while abstr
 
 # Quick Start Guide
 Download and install the latest version of Virtualbox and Virtualbox Extension Pack:
+
 https://www.virtualbox.org/wiki/Downloads
 
 Download and install the latest version of vagrant:
+
 http://downloads.vagrantup.com
+
 
 Reboot your machine to ensure the kernel drivers load properly.
 
