@@ -13,6 +13,7 @@ Download and install the latest version of Virtualbox and Virtualbox Extension P
 
 https://www.virtualbox.org/wiki/Downloads
 
+
 Download and install the latest version of vagrant:
 
 http://downloads.vagrantup.com
@@ -20,9 +21,11 @@ http://downloads.vagrantup.com
 
 Reboot your machine to ensure the kernel drivers load properly.
 
+
 From the command line, ensure vagrant is installed:
 
 <code>vagrant -v</code>
+
 
 Next install the following vagrant plugins using these commands:
 
@@ -30,40 +33,65 @@ Next install the following vagrant plugins using these commands:
 
 <code>vagrant plugin install vagrant-berkshelf</code>
 
+
 Add the following entry to your hosts file:
+
 <code>33.33.33.10                abcdv defdv ghidv jkldv mnodv</code>
 
+
 Clone the Candide project to your local machine:
+
 <code>git clone git@github.com:coloradobum/candide.git candide</code>
 
+
 Start up the virtual machine
+
 <code>cd candide</code>
+
 <code>vagrant up</code>
+
 
 The base image will take about 10 minutes to download and the first build will take about 15 minutes, so grab a cup of coffee. You only need to download the base image once, even after destroying the virtual machine via vagrant destroy.
 
 When the build is complete, open a browser and navigate to one of the test sites below:
+
 <code>http://abcdv</code>
+
 <code>http://defdv</code>
+
 <code>http://ghidv</code>
+
 <code>http://jkldv</code>
+
 <code>http://mnodv</code>
 
+
 The User 1 credentials are the same as the sitename. For example:
+
 username: abcdv
+
 password: abcdv
 
+
 To shutdown the virtual machine(frees up diskspace but slower to start):
+
 <code>vagrant halt</code>
 
+
 To put the virtual machine to sleep (uses diskpace, but faster to start):
+
 <code>vagrant suspend</code>
 
+
 To activate the virtual machine from a halt or powerdown (either way the startup process will be much faster than the original build step):
+
 <code>vagrant up</code>
 
+
 To destroy the virtual machine, delete all files and start with a fresh server:
+
 <code>vagrant destroy</code>
+
 <code>vagrant up</code>
 
 # Where do I go from here?
