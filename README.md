@@ -9,6 +9,14 @@ In addition, creating a new site is easy and can be performed using only a three
 Candide lets you focus on developing multiple websites concurrently, while abstracting the server configuration.
 
 # Quick Start Guide
+Ensure you have git setup on your machine
+
+<code>which git</code>
+
+If using a Mac, Home brew is recommended for installing git. http://brew.sh/
+
+If using a mac, download Developer Tools from developer.apple.com/downloads for your OS.
+
 Download and install the latest version of Virtualbox and Virtualbox Extension Pack:
 
 https://www.virtualbox.org/wiki/Downloads
@@ -55,15 +63,15 @@ The base image will take about 10 minutes to download and the first build will t
 
 When the build is complete, open a browser and navigate to one of the test sites below:
 
-<code>http://abcdv</code>
+<code>http://abc.dev</code>
 
-<code>http://defdv</code>
+<code>http://def.dev</code>
 
-<code>http://ghidv</code>
+<code>http://ghi.dev</code>
 
-<code>http://jkldv</code>
+<code>http://jkl.dev</code>
 
-<code>http://mnodv</code>
+<code>http://mno.dev</code>
 
 
 The User 1 credentials are the same as the sitename. For example:
