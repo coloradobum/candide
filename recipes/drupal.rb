@@ -24,7 +24,7 @@ node[:users].each do |user|
       --site-name='#{user['sitecode']}dv' \
       --yes"
       user "root"
-      not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/index.php")}
+      not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php")}
   end
 
   execute "set-permissions" do
@@ -35,7 +35,7 @@ node[:users].each do |user|
   execute "set-files-permissions" do
       command "cd /var/www/#{user['sitecode']}dv/public_html/sites/default; chmod -R 777 files"
       user "root"
-      not_if { Dir.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/files")}
+      only_if do Dir.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/files") end
   end
 
   # file "/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php" do
@@ -52,7 +52,7 @@ node[:users].each do |user|
     variables({
       :sitecode => user['sitecode']
     })
-    only_if do ! File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php") end
+    #action :create_if_missing
   end
 
 end
