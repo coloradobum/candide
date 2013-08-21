@@ -5,13 +5,13 @@ node[:users].each do |user|
     mode 0755
     owner "#{user['sitecode']}dv"
     group 'apache'
-    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/all")}
+    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/index.php")}
   end
 
   execute "drush" do
     command "cd /var/www/#{user['sitecode']}dv/public_html/; drush make drupal7.make --yes"
     user "root"
-    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php")}
+    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/index.php")}
   end
 
   execute "drush" do
@@ -24,7 +24,7 @@ node[:users].each do |user|
       --site-name='#{user['sitecode']}dv' \
       --yes"
       user "root"
-      not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php")}
+      not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/index.php")}
   end
 
   execute "set-permissions" do
@@ -35,6 +35,7 @@ node[:users].each do |user|
   execute "set-files-permissions" do
       command "cd /var/www/#{user['sitecode']}dv/public_html/sites/default; chmod -R 777 files"
       user "root"
+      not_if { Dir.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/files")}
   end
 
   # file "/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php" do
@@ -51,6 +52,7 @@ node[:users].each do |user|
     variables({
       :sitecode => user['sitecode']
     })
+    only_if do ! File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php") end
   end
 
 end
