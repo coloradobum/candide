@@ -44,7 +44,7 @@ Next install the following vagrant plugins using these commands:
 
 Add the following entry to your hosts file:
 
-<code>33.33.33.10                abcdv defdv ghidv jkldv mnodv</code>
+<code>33.33.33.10                abc.dev def.dev ghi.dev jkl.dev mno.dev</code>
 
 
 Clone the Candide project to your local machine:
