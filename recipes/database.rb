@@ -34,3 +34,8 @@ node[:users].each do |user|
   end
 
 end
+
+template "/etc/my.cnf" do
+    source "my.cnf.erb"
+    notifies :restart, 'service[mysql]'
+  end
