@@ -50,11 +50,7 @@ Vagrant.configure("2") do |config|
         :server_repl_password => 'password'
       },
       :users => [
-        {:sitecode => 'abc', :comment => 'comment abc'},
-        {:sitecode => 'def',  :comment => 'comment def'},
-        {:sitecode => 'ghi', :comment => 'comment ghi'},
-        {:sitecode => 'jkl', :comment => 'comment jkl'},
-        {:sitecode => 'mno', :comment => 'comment mno'},
+        {:sitecode => 'abc', :comment => 'www.abc.com'},
       ],
     }
 
