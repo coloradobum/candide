@@ -44,7 +44,7 @@ Next install the following vagrant plugins using these commands:
 
 Add the following entry to your hosts file:
 
-<code>33.33.33.10                abc.dev def.dev ghi.dev jkl.dev mno.dev</code>
+<code>33.33.33.10                abc.dev</code>
 
 
 Clone the Candide project to your local machine:
@@ -65,16 +65,8 @@ When the build is complete, open a browser and navigate to one of the test sites
 
 <code>http://abc.dev</code>
 
-<code>http://def.dev</code>
 
-<code>http://ghi.dev</code>
-
-<code>http://jkl.dev</code>
-
-<code>http://mno.dev</code>
-
-
-The User 1 credentials are the same as the sitename. For example:
+The Drupal User 1 credentials are the same as the sitename. For example:
 
 username: abcdv
 
