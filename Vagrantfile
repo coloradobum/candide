@@ -9,11 +9,13 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "candide-berkshelf"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "opscode-centos-6.4"
+  config.vm.box = "candide-1.0"
+  #config.vm.box = "opscode-centos-6.4"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box"
+  config.vm.box_url = "https://s3-us-west-2.amazonaws.com/btm-candide/candide-1.0.pkg"
+  #config.vm.box_url = "https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box"
 
   # Installs the latest version of chef-client.
   config.omnibus.chef_version = :latest
