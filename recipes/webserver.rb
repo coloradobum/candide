@@ -1,12 +1,3 @@
-#
-# Cookbook Name:: candide
-# Recipe:: default
-#
-# Copyright (C) 2013 Jeff Thomas
-#
-# All rights reserved - Do Not Redistribute
-#
-
 include_recipe "apache2"
 include_recipe "apache2::mod_php5"
 include_recipe "apache2::mod_rewrite"
