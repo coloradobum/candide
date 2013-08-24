@@ -9,8 +9,7 @@ end
 include_recipe "java"
 
 remote_file "/usr/local/src/apache-solr-3.6.2.tgz" do
-  #source "http://apache.mirrors.hoobly.com/lucene/solr/3.6.2/apache-solr-3.6.2.tgz"
-  source "https://dl.dropboxusercontent.com/u/250764/apache-solr-3.6.2.tgz"
+  source "https://s3-us-west-2.amazonaws.com/btm-candide/apache-solr-3.6.2.tgz"
   mode "0644"
   action :create_if_missing
   notifies :run, "script[extract_apache_solr]", :immediately
