@@ -87,6 +87,8 @@ username: abcdv
 
 password: abcdv
 
+You can now start building on this site or replace the code and db from an existing site.  Check out the wiki on how to do this.
+
 
 To shutdown the virtual machine(frees up diskspace but slower to start):
 
