@@ -9,13 +9,24 @@ In addition, creating a new site is easy and can be performed using only a three
 Candide lets you focus on developing multiple websites concurrently, while abstracting the server configuration.
 
 # Quick Start Guide
+I've only tested this on a mac (10.7 and 10.8), if you are on a linux flavored or Windows, it should still work, but you might have to deviate from the following commands to get it working.  I would like to include support for windows, ubuntu, etc, so if figure it out please contribute to the doco.
+
+Going forward, I'll assume you are using Mac OSX 10.7 (Lion) or Mac OSX 10.8(Mountain Lion).
+
+If you use a package manager like homebrew you'll need a compilier.  Instead of downloading the entire XCode package, just download the CLI Tools for XCode.
+
+If you're on 10.7 (Lion) download this package and install:
+https://s3-us-west-2.amazonaws.com/btm-candide/xcode462_cltools_10_76938260a.dmg
+
+If you're on 10.8 (Moutain Lion) download this package and install:
+https://s3-us-west-2.amazonaws.com/btm-candide/xcode462_cltools_10_86938259a.dmg
+
 Ensure you have git setup on your machine
 
 <code>which git</code>
 
-If using a Mac, Home brew is recommended for installing git. http://brew.sh/
+Home brew is recommended for installing git. http://brew.sh/ The site has documented the install process so I'll defer to that.
 
-If using a mac, download Developer Tools from developer.apple.com/downloads for your OS.
 
 Download and install the latest version of Virtualbox and Virtualbox Extension Pack:
 
