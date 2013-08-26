@@ -9,11 +9,11 @@ In addition, creating a new site is easy and can be performed using only a three
 Candide lets you focus on developing multiple websites concurrently, while abstracting the server configuration.
 
 # Quick Start Guide
-I've only tested this on a mac (10.7 and 10.8), if you are on a linux flavored or Windows, it should still work, but you might have to deviate from the following commands to get it working.  I would like to include support for windows, ubuntu, etc, so if figure it out please contribute to the doco.
+I've only tested this on a mac (10.7 and 10.8), if you are on a linux flavored OS or Windows, it should still work, but you will have to deviate from the following commands to get it working.  I would like to include support for windows, ubuntu, etc, so if you figure it out please contribute to the doco.
 
 Going forward, I'll assume you are using Mac OSX 10.7 (Lion) or Mac OSX 10.8(Mountain Lion).
 
-If you use a package manager like homebrew you'll need a compilier.  Instead of downloading the entire XCode package, just download the CLI Tools for XCode.
+You'll need a compiler.  Instead of downloading the entire XCode package, just download the CLI Tools for XCode.
 
 If you're on 10.7 (Lion) download this package and install:
 https://s3-us-west-2.amazonaws.com/btm-candide/xcode462_cltools_10_76938260a.dmg
@@ -25,7 +25,7 @@ Ensure you have git setup on your machine
 
 <code>which git</code>
 
-Home brew is recommended for installing git. http://brew.sh/ The site has documented the install process so I'll defer to that.
+Home brew is recommended for installing git, if you don't have it. http://brew.sh/ The site has documented the install process and so I'll defer to that.
 
 
 Download and install the latest version of Virtualbox and Virtualbox Extension Pack:
@@ -52,6 +52,10 @@ Next install the following vagrant plugins using these commands:
 
 <code>vagrant plugin install vagrant-berkshelf</code>
 
+Ensure both plugins have been installed
+
+<code>vagrant plugin list</code>
+
 
 Add the following entry to your hosts file:
 
@@ -70,7 +74,7 @@ Start up the virtual machine:
 <code>vagrant up</code>
 
 
-The base image will take about 10 minutes to download and the first build will take about 15 minutes, so grab a cup of coffee. You only need to download the base image once, even after destroying the virtual machine via vagrant destroy.
+The base image will include include the compiled stack.  At 800 MB, it might take some time, but you only need to download the base image once, even after destroying the virtual machine via vagrant destroy.
 
 When the build is complete, open a browser and navigate to one of the test sites below:
 
