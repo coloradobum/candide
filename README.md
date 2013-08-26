@@ -74,9 +74,9 @@ Start up the virtual machine:
 <code>vagrant up</code>
 
 
-The base image will include include the compiled stack.  At 800 MB, it might take some time, but you only need to download the base image once, even after destroying the virtual machine via vagrant destroy.
+The base image now includes the compiled stack.  At over 800 MB, it might take some time, but you only need to download the base image once, even after destroying the virtual machine via vagrant destroy.
 
-When the build is complete, open a browser and navigate to one of the test sites below:
+When the build is complete, open a browser and navigate to the test site below:
 
 <code>http://abc.dev</code>
 
