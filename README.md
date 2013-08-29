@@ -2,9 +2,9 @@
 Candide is a PaaS (Platform as a Service) designed to run Drupal and Wordpress sites.
 
 # Why would I want to use it?
-Candide provides a dev server environment mirroring a staging and production server environment. This helps negate the "works on my machine" situations.  In addition, you have root access to a full server you can tweak, blow-away and restart fresh at anytime. Maybe the most important one- you don't worry about messing up your machine trying to configure that "one thing"!
+Candide provides a dev server environment mirroring a staging and production server environment. This helps negate the "works on my machine" situations.  You have root access to a fully configured server that you can tweak, blow-away and restart fresh at anytime.  No need to worry about messing up your local machine trying to configure that "one thing"!
 
-In addition, creating a new site is easy and can be performed using only a three letter site code and the production url. With only these two pieces, you will have unique user account that includes apache vhost, solr, and database configuration.
+Creating a new site is easy and can be performed using only a three letter site code and the production url. With only these two pieces, you will have unique user account that includes apache vhost, solr, and database configuration.
 
 Candide lets you focus on developing multiple websites concurrently, while abstracting the server configuration.
 
