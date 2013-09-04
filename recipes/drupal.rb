@@ -15,7 +15,7 @@ node[:users].each do |user|
   end
 
   execute "drush" do
-      command "cd /var/www/#{user['sitecode']}dv/public_html/; \
+    command "cd /var/www/#{user['sitecode']}dv/public_html/; \
       drush si --db-url=mysql://#{user['sitecode']}dv_drupal:#{user['sitecode']}dv_drupal@localhost/#{user['sitecode']}dv_drupal \
       --account-name=#{user['sitecode']}dv \
       --account-pass=#{user['sitecode']}dv \
@@ -23,19 +23,35 @@ node[:users].each do |user|
       --db-su-pw=rootpass \
       --site-name='#{user['sitecode']}dv' \
       --yes"
-      user "root"
-      not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php")}
+    user "root"
+    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php")}
   end
 
-  execute "set-permissions" do
-      command "cd /var/www/#{user['sitecode']}dv/; sudo chown -R #{user['sitecode']}dv:apache public_html"
-      user "root"
-  end
+  # execute "set-permissions" do
+  #   command "cd /var/www/#{user['sitecode']}dv/; sudo chown -R #{user['sitecode']}dv:apache public_html"
+  #   user "root"
+  # end
 
-  execute "set-files-permissions" do
-      command "cd /var/www/#{user['sitecode']}dv/public_html/sites/default; chmod -R 777 files"
-      user "root"
-      only_if do Dir.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/files") end
+  # directory "/var/www/#{user['sitecode']}dv/public_html" do
+  #   action :create
+  #   recursive true
+  #   mode "0775"
+  #   owner "#{user['sitecode']}dv"
+  #   group "apache"
+  # end
+
+  # execute "set-files-permissions" do
+  #   command "cd /var/www/#{user['sitecode']}dv/public_html/sites/default; chmod -R 777 files"
+  #   user "root"
+  #   only_if do Dir.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/files") end
+  # end
+
+  directory "/var/www/#{user['sitecode']}dv/public_html/sites/default/files" do
+    #action :create
+    recursive true
+    mode "0777"
+    #owner "#{user['sitecode']}dv"
+    #group "apache"
   end
 
   # file "/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php" do

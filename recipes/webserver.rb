@@ -43,12 +43,24 @@ node[:users].each do |user|
   end
 
   # create document root
+  directory "/var/www/#{user['sitecode']}dv/"  do
+    group [ user['sitecode'], "dv" ].join
+    owner [ user['sitecode'], "dv" ].join
+    mode "0775"
+    action :create
+  end
+
   directory "/var/www/#{user['sitecode']}dv/public_html" do
     action :create
-    recursive true
+    #recursive true
     mode "0775"
     owner "#{user['sitecode']}dv"
     group "apache"
+  end
+
+  execute "symlink" do
+    command "ln -s /var/www/#{user['sitecode']}dv/ /home/#{user['sitecode']}dv/www"
+    not_if { File.exists?("/home/#{user['sitecode']}dv/www")}
   end
 
   # # create website folder
