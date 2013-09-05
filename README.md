@@ -32,11 +32,17 @@ Download and install the latest version of Virtualbox and Virtualbox Extension P
 
 https://www.virtualbox.org/wiki/Downloads
 
+note: use 4.2.16 for now.
+
+http://download.virtualbox.org/virtualbox/4.2.16/VirtualBox-4.2.16-86992-OSX.dmg
+
+http://download.virtualbox.org/virtualbox/4.2.16/Oracle_VM_VirtualBox_Extension_Pack-4.2.16-86992.vbox-extpack
 
 Download and install the latest version of vagrant:
 
 http://downloads.vagrantup.com
 
+note: use 1.27 for now.
 
 Reboot your machine to ensure the kernel drivers load properly.
 
