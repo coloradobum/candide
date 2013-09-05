@@ -3,7 +3,7 @@ include_recipe "database::mysql"
 
 node[:users].each do |user|
 
-  mysql_database [ user['sitecode'], "dv_drupal" ].join do
+  mysql_database [ user['sitecode'], "dv" ].join do
     connection(
       :host     => node[:candide][:database][:host],
       :username => node[:candide][:database][:username],
@@ -12,14 +12,14 @@ node[:users].each do |user|
     action :create
   end
 
-  mysql_database_user [user['sitecode'], "dv_drupal"].join do
+  mysql_database_user [user['sitecode'], "dv"].join do
     connection(
       :host     => node[:candide][:database][:host],
       :username => node[:candide][:database][:username],
       :password => node[:candide][:database][:password]
     )
-    password      [user['sitecode'], "dv_drupal"].join
-    database_name [user['sitecode'], "dv_drupal"].join
+    password      [user['sitecode'], "dv"].join
+    database_name [user['sitecode'], "dv"].join
     host node[:candide][:database][:host]
     action [:create, :grant]
   end
