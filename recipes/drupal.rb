@@ -24,7 +24,7 @@ node[:users].each do |user|
       --site-name='#{user['sitecode']}dv' \
       --yes"
     user "root"
-    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/sites/default/settings.php")}
+    not_if { File.exists?("/var/www/#{user['sitecode']}dv/public_html/index.php")}
   end
 
   # execute "set-permissions" do
